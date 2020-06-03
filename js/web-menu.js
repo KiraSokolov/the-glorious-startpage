@@ -8,7 +8,6 @@ let webMenuVisible = false;
 let webItemFocus;
 let webListIndex = 0;
 
-
 // Create mouse event for passed div
 function addMouseUpEvent(li, url) {
 	li.onmouseup = function() {
@@ -82,15 +81,17 @@ function populateWebMenu() {
 	sortList();
 }
 
+// Fuzzy search
 String.prototype.fuzzy = function(term, ratio) {
     var string = this.toLowerCase();
     var compare = term.toLowerCase();
     var matches = 0;
+    
     if (string.indexOf(compare) > -1) return true; // covers basic partial matches
     for (var i = 0; i < compare.length; i++) {
         string.indexOf(compare[i]) > -1 ? matches += 1 : matches -=1;
     }
-    return (matches/this.length >= ratio || term == "")
+    return (matches/this.length >= ratio || term == "");
 };
 
 // Search through the list
@@ -106,12 +107,12 @@ function filterWebList() {
 	// Loop through all list items, and focus if matches the search query
 	for (i = 0; i < li.length; i++) {
 
-		a = li[i].getElementsByClassName("webItem")[0];
+		a = li[i].getElementsByClassName("webItemName")[0];
 		txtValue = a.innerHTML || a.textContent || a.innerText;
 
 		// If an item match, hightlight it and focus
 		// if (txtValue.toUpperCase().indexOf(filter) !== -1) {
-		if (txtValue.toUpperCase().fuzzy(filter, 1)) {
+		if (txtValue.toUpperCase().fuzzy(filter, 1) === true) {
 			
 			// Unselect/Unhightlight old active
 			var oldWebItemFocus = webItemFocus;
