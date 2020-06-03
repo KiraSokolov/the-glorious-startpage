@@ -35,54 +35,12 @@
 	--rounded-radius: 12px;
 }
 
-/*Hide focus elements*/
-input:focus,
-textarea:focus,
-select:focus{
-    outline: none;
-}
-
-/*Placeholder*/
-::placeholder {
-  color: var(--base-color);
-  opacity: 0.75;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--base-container);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--base-active-bg);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--base-hover-bg);
-}
-
-select {
-	text-align: center;
-	text-align-last: center;
-}
-
-option {
-	text-align: left;
-}
-
 * {
 	/*Font rendering*/
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: grayscale !important;
 	text-rendering: optimizeLegibility !important;
-	font-variant-ligatures: none;
+	font-variant-ligatures: none !important;
 }
 
 body {
@@ -104,21 +62,69 @@ html, body {
 }
 
 @font-face {
-  font-family: roboto;
-  src: url(../assets/font/Roboto-Regular.ttf);
+	font-family: roboto;
+	src: url(../assets/font/Roboto-Regular.ttf);
+	font-display: fallback;
 }
 
 @font-face {
-  font-family: roboto-bold;
-  src: url(../assets/font/Roboto-Bold.ttf);
+	font-family: roboto-bold;
+	src: url(../assets/font/Roboto-Bold.ttf);
+	font-display: fallback;
 }
 
 @font-face {
-  font-family: roboto-light;
-  src: url(../assets/font/Roboto-Light.ttf);
+	font-family: roboto-light;
+	src: url(../assets/font/Roboto-Light.ttf);
+	font-display: fallback;
 }
 
 @font-face {
-  font-family: roboto-thin;
-  src: url(../assets/font/Roboto-Thin.ttf);
+	font-family: roboto-thin;
+	src: url(../assets/font/Roboto-Thin.ttf);
+	font-display: fallback;
+}
+
+/*Scrollbar*/
+
+/*Placeholder*/
+::placeholder {
+	color: var(--base-color);
+	opacity: 0.75;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--base-container);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--base-active-bg);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--base-hover-bg);
+}
+
+/*Hide focus elements outline*/
+input:focus,
+textarea:focus,
+select:focus{
+    outline: none;
+}
+
+select {
+	text-align: center;
+	text-align-last: center;
+}
+
+option {
+	text-align: left;
 }
