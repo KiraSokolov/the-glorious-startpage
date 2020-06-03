@@ -235,5 +235,9 @@ function weatherToggle() {
 
 	if (webMenuVisible) {
 		webMenuToggle();
+	} else if (floatPanelVisible) {
+		slideDashboard();
+	} else if (webMenuVisible) {
+		webMenuToggle();
 	}
 }

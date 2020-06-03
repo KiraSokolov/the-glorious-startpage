@@ -20,6 +20,10 @@ function slideDashboard() {
 	// Enable overlay
 	dashboardHider.classList.toggle('show');
 	floatPanelVisible = !floatPanelVisible;
+
+	if (weatherVisible) {
+		weatherToggle();
+	}
 }
 
 dashboardHider.addEventListener(
