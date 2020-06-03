@@ -59,14 +59,13 @@
 
 #webMenuContainer {
 	background: transparent;
-	max-height: 82vh;
+	max-height: 100%;
 
 	overflow: hidden;
 }
 
 #webMenuSearchBox {
-	background: transparent;
-	backdrop-filter: blur(var(--blur-strength));
+	background: var(--base-bg);
 	
 	text-align: center;
 	font-family: roboto-bold;
@@ -128,21 +127,16 @@
 
 /*Child of li*/
 .webItem {
+	background: transparent;
 	width: 128px;
 	height: 128px;
 	margin: 5px;
-	transition: transform var(--transition-speed);
+	cursor: pointer;
 	border-radius: var(--rounded-radius);
-	background: var(--base-container);
 }
 
 .webItem:hover {
 	background: var(--base-hover-bg);
-	cursor: pointer;
-
-	-ms-transform: scale(1.10);
-	-webkit-transform: scale(1.10);
-	transform: scale(1.10); 
 }
 
 .webItem:active {
@@ -155,10 +149,6 @@
 	margin: 5px;
 	border-radius: var(--rounded-radius);
 	background: var(--base-hover-bg);
-
-	-ms-transform: scale(1.10);
-	-webkit-transform: scale(1.10);
-	transform: scale(1.10); 
 }
 
 .webItemFocus:hover {
