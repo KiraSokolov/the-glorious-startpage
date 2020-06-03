@@ -50,15 +50,15 @@ document.addEventListener(
             // left window key, f5, f12, return
             if (event.key === 'Control' ||
                 event.key === 'Alt' ||
+                event.key === 'Shift' ||
                 event.key === 'Meta' ||
                 event.key === 'F5' ||
                 event.key === 'F12' ||
                 event.key === 'Enter')
-                { return; };
+                return;;
 
-
-            // Check if float panel is open, return
-            if (floatPanelVisible) { return; };
+            // Check if float panel and weather is open, return
+            if (floatPanelVisible || weatherVisible) { return; };
 
             // Open searchbox
             toggleSearchBox();
@@ -69,12 +69,6 @@ document.addEventListener(
             // Will also hide if you hit enter
             if ((event.key === 'Backspace' || event.key === 'Enter') && 
                 searchBox.value < 1) { toggleSearchBox(); return; };
-
-            // Clear searchbox
-            if (event.key === 'Shift' && event.keyCode === 32 ) { 
-                searchBox.value = '';
-                return; 
-            };
         }
 
 
