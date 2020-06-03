@@ -8,10 +8,16 @@ let webMenuVisible = false;
 let webItemFocus;
 let webListIndex = 0;
 
-// Create mouse event for passed div
+// Create mouse event for passed li
 function addMouseUpEvent(li, url) {
-	li.onmouseup = function() {
+	// Create a callback property for the passed li
+	li.callback = function() {
 		window.location.href = encodeURI(url);
+	}
+
+	// Create onmouseup event for the li
+	li.onmouseup = function() {
+		li.callback();
 	}
 }
 
@@ -140,17 +146,28 @@ function filterWebList() {
 // Type event on web mmenu search box
 webMenuSearchBox.onkeydown = function(event) {
 
+	// Don't hijack keyboard navigation buttons (up, down, left, right)
 	if ((event.which === 39) || (event.which === 40) || 
 		(event.which === 37) || (event.which === 38)) return;
 
 	if (event.keyCode === 13 && webItemFocus) {
-		webItemFocus.onmouseup();
+		// Run the focused li's callback
+		webItemFocus.callback();
+
+		// Hide web menu
 		webMenuToggle();
+
 	} else if (event.keyCode === 8 && webMenuSearchBox.value.length  < 1) {
+		// Hide web menu if backspace is pressed and searchbox value is 0
 		webMenuToggle();
+
 	} else if (event.keyCode === 27) {
+
+		// Ignore escape key
 		return;
 	}
+
+	// Filter
 	filterWebList();
 }
 
@@ -176,7 +193,6 @@ function getFirstItem() {
 	// Add webItemFocus class
 	webItemFocusChildren.classList.add('webItemFocus');
 }
-
 
 // Show/Hide web menu
 function webMenuToggle() {
@@ -278,11 +294,11 @@ webMenu.addEventListener(
 	false
 );
 
-// Startup
+// Populate and get first child
 function initWebMenu() {
 	populateWebMenu();
 	getFirstItem();
 }
 
-// Populate web menu
+// Initialize web menu
 window.onload = initWebMenu();
