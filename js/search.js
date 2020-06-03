@@ -8,21 +8,24 @@ function webSearch() {
 };
 
 // Key release event
-searchBox.addEventListener("keyup", function(event) {
-	
-	// Number 13 is the "Enter" key on the keyboard
-  	if (event.keyCode === 13) {
+searchBox.addEventListener(
+	"keyup",
+	function(event) {
+		
+		// Number 13 is the "Enter" key on the keyboard
+	  	if (event.key === 'Enter') {
 
-		// Don't accept empty strings
-		if (searchBox.value < 1) {
-			return;
-		}
+			// Don't accept empty strings
+			if (searchBox.value < 1) {
+				return;
+			}
 
-    	// Cancel the default action, if needed
-    	event.preventDefault();
+	    	// Cancel the default action, if needed
+	    	event.preventDefault();
 
-    	// Search the web
-    	webSearch()
-	};
+	    	// Search the web
+	    	webSearch()
+		};
 
-});
+	}
+);

@@ -64,10 +64,12 @@ document.addEventListener(
             if ((event.key === 'Backspace' || event.key === 'Enter') && 
                 searchBox.value < 1) { toggleSearchBox(); return; };
         }
+    }
+);
 
-
-});
-
-document.addEventListener('keyup', (event) => {
-   delete keysPressed[event.key];
-});
+document.addEventListener(
+    'keyup',
+    (event) => {
+        delete keysPressed[event.key];
+    }
+);

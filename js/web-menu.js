@@ -147,23 +147,22 @@ function filterWebList() {
 webMenuSearchBox.onkeydown = function(event) {
 
 	// Don't hijack keyboard navigation buttons (up, down, left, right)
-	if ((event.which === 39) || (event.which === 40) || 
-		(event.which === 37) || (event.which === 38)) return;
+	if ((event.key === 'ArrowRight') || (event.key === 'ArrowDown') || 
+		(event.key === 'ArrowLeft') || (event.key === 'ArrowUp')) return;
 
-	if (event.keyCode === 13 && webItemFocus) {
+	if (event.key === 'Enter' && webItemFocus) {
 		// Run the focused li's callback
 		webItemFocus.callback();
 
 		// Hide web menu
 		webMenuToggle();
 
-	} else if (event.keyCode === 8 && webMenuSearchBox.value.length  < 1) {
+	} else if (event.key === 'Backspace' && webMenuSearchBox.value.length  < 1) {
 		// Hide web menu if backspace is pressed and searchbox value is 0
 		webMenuToggle();
 
-	} else if (event.keyCode === 27) {
-
-		// Ignore escape key
+	} else if ((event.key === 'Escape') || (event.key === 'Alt')) {
+		// Ignore escape and alt key
 		return;
 	}
 
