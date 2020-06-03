@@ -65,7 +65,7 @@
 }
 
 #webMenuSearchBox {
-	background: var(--base-bg);
+	background: var(--base-container);
 	
 	text-align: center;
 	font-family: roboto-bold;
