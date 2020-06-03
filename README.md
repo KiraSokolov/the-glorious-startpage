@@ -26,7 +26,15 @@
 + Safe configuration settings
 + Dynamic Background
 + Pure JS
++ Keyboard Navigation
 + And many bugs!
+
+## Keybindings
+
++ <kbd>alt + w</kbd> - toggles weather screen
++ <kbd>alt + s</kbd> - toggles dashboard panel
++ <kbd>Escape</kbd> - toggles web menu
++ <kbd>Backspace</kbd> - toggles search box
 
 ### TODO
 
@@ -35,8 +43,9 @@
 - [x] Dynamic Background   
 - [x] Cleaner code<sup>WIP</sup>  
 - [x] More items on the dashboard<sup>WIP</sup>  
-- [ ] Keyboard driven
+- [x] Keyboard driven<sup>WIP</sup>
 - [x] Swipe gestures for mobile
+
 
 ### Important Note
 
