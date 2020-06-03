@@ -231,13 +231,13 @@ function weatherToggle() {
 	hideMainContainer();
 	rotateProfile();
 	weatherScreen.classList.toggle("show");
-	weatherVisible = !weatherVisible;
 
 	if (webMenuVisible) {
 		webMenuToggle();
 	} else if (floatPanelVisible) {
 		slideDashboard();
-	} else if (webMenuVisible) {
-		webMenuToggle();
 	}
+
+	weatherVisible = !weatherVisible;
+
 }

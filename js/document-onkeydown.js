@@ -28,12 +28,6 @@ document.addEventListener(
                 return;
             };
 
-            // If dashboard is visible, hide
-            if (floatPanelVisible) {
-                slideDashboard();
-                return;
-            }
-
             // Show web menu
             webMenuToggle();
             return;

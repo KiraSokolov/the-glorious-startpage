@@ -197,10 +197,11 @@ function getFirstItem() {
 // Show/Hide web menu
 function webMenuToggle() {
 
+	webMenuVisible = !webMenuVisible;
+
 	hideMainContainer();
 	rotateProfile();
 	webMenu.classList.toggle("show");
-	webMenuVisible = !webMenuVisible;
 
 	// Clear and unfocus searchbox
 	if (!webMenuVisible) {
@@ -216,9 +217,13 @@ function webMenuToggle() {
 		webMenuSearchBox.focus();
 	}
 
-	if(weatherVisible) {
+	if(weatherVisible && webMenuVisible) {
 		weatherToggle();
+	} else if (floatPanelVisible && webMenuVisible) {
+		slideDashboard();
+		return;
 	}
+
 }
 
 // Remove class to focused item

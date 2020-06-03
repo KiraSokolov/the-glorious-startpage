@@ -9,6 +9,10 @@ function slideDashboard() {
 	// Hide search box
 	if (searchBoxVisible) {
 		toggleSearchBox();
+	} else if (weatherVisible) {
+		weatherToggle();
+	} else if (webMenuVisible) {
+		webMenuToggle();
 	}
 	
 	// Toggle right panel
@@ -21,9 +25,7 @@ function slideDashboard() {
 	dashboardHider.classList.toggle('show');
 	floatPanelVisible = !floatPanelVisible;
 
-	if (weatherVisible) {
-		weatherToggle();
-	}
+	
 }
 
 dashboardHider.addEventListener(
