@@ -137,7 +137,7 @@ function filterWebList() {
 }
 
 // Type event on web mmenu search box
-webMenuSearchBox.onkeyup = function(event) {
+webMenuSearchBox.onkeydown = function(event) {
 
 	if ((event.which === 39) || (event.which === 40) || 
 		(event.which === 37) || (event.which === 38)) return;
